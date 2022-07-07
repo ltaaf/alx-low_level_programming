@@ -1,10 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "main.h"
 
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
-
-int main(int argc, char *argv[]) {
-//	======================================debut=======================
 /**
  * largest_number - returns the largest of 3 numbers
  * @a: first integer
@@ -12,7 +7,8 @@ int main(int argc, char *argv[]) {
  * @c: third integer
  * Return: largest number
  */
-int largest_number(int a, int b, int c)
+
+int largest_number(a, b, c)
 {
     int largest;
 
@@ -30,8 +26,4 @@ int largest_number(int a, int b, int c)
     }
 
     return (largest);
-}
-
-//	===================================fin debut===================
-	return 0;
 }
