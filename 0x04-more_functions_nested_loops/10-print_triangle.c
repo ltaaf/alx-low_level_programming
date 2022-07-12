@@ -1,34 +1,35 @@
-#include "holberton.h"
+/*
+* Auth: Gbemi Jacob Adebayo
+*/
+
+#include "main.h"
 
 /**
- * print_triangle - check for a digit
- * @size : integer type
- * Return:void
+ * print_triangle - Prints a triangle, using the character #.
+ * @size: The size of the triangle.
  */
 
 void print_triangle(int size)
 {
+	int hash, index;
 
-	int i = 1, ii;
-
-	while (i <= size && size > 0)
+	if (size > 0)
 	{
-		ii = 0;
-		while (ii < size - i)
+		for (hash = 1; hash <= size; hash++)
 		{
-			_putchar(' ');
-			ii++;
-		}
-		ii = 0;
-		while (ii < i)
-		{
-			_putchar('#');
-			ii++;
-		}
+			for (index = size - hash; index > 0; index--)
+				_putchar(' ');
 
-		_putchar('\n');
-		i++;
+			for (index = 0; index < hash; index++)
+				_putchar('#');
+
+			if (hash == size)
+				continue;
+
+			_putchar('\n');
+		}
 	}
-	if (i == 1)
-		_putchar('\n');
+
+	_putchar('\n');
 }
+

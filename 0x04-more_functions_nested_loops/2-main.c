@@ -1,16 +1,14 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * main - check the code for me.
  *
  * Return: Always 0.
  */
-
 int main(void)
 {
-	print_line(0);
-	print_line(2);
-	print_line(10);
-	print_line(-4);
+	printf("%d\n", mul(98, 1024));
+	printf("%d\n", mul(-402, 4096));
 	return (0);
 }

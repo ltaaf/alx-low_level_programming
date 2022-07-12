@@ -1,2 +1,1 @@
-# More functions and tested loops
-
+More functions and nested loops

@@ -1,20 +1,19 @@
-#include "holberton.h"
+/*
+* Auth: Gbemi Jacob Adebayo
+*/
+
+#include "main.h"
 
 /**
- * print_numbers - prints numbers
- * Return:0
+ * print_numbers - Prints the numbers from 0-9.
  */
 
 void print_numbers(void)
 {
-	char n = 0;
+	int num;
 
-	while (n <= 9)
-	{
-		_putchar('0' + n);
-		n++;
+	for (num = 0; num <= 9; num++)
+		_putchar((num % 10) + '0');
 
-	}
 	_putchar('\n');
-
 }
