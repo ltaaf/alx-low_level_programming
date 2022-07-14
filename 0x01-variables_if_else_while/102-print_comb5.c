@@ -1,43 +1,24 @@
 #include <stdio.h>
-
 /**
- * main - a simple program that outputs unordered
- * combinations of two digit integers without duplicates
- *
- * Return: 0 on success
+ * main - program that prints numbers from 0 to 99.
+ * Return: 0
  */
+
 int main(void)
 {
-	int ifirst;
-	int i;
-	int jfirst;
-	int j;
+	int c = 0;
 
-	for (ifirst = 48; ifirst < 58; ifirst++)
+	while (c <= 99)
 	{
-		for (i = 48; i < 58; i++)
+		putchar(c / 10 + '0');
+		putchar(c % 10 + '0');
+		if (c != 99)
 		{
-			j = i + 1;
-			jfirst = ifirst;
-			for (; jfirst < 58; jfirst++)
-			{
-				for (; j < 58; j++)
-				{
-					putchar(ifirst);
-					putchar(i);
-					putchar(' ');
-					putchar(jfirst);
-					putchar(j);
-					if (ifirst != 57 || jfirst != 57 || i != 56 || j != 57)
-					{
-						putchar(',');
-						putchar(' ');
-					}
-				}
-				j = 48;
-			}
+			putchar(',');
+			putchar(' ');
 		}
+		c++;
 	}
-	putchar('\n');
-	return (0);
+putchar('\n');
+return (0);
 }
