@@ -1,61 +1,26 @@
-<<<<<<< HEAD
-
-#include "main.c"
-
-/**
- * *rot13 - encodes a string using rot13.
- * @s: int type array pointer
- * Return: encoded
- */
-
-char *rot13(char *s)
-{
-int i, ii;
-char input[] =  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-char output[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-
-for (i = 0; s[i] != '\0'; i++)
-{
-	for (ii = 0; ii < 54; ii++)
-	{
-		if (((s[i] <= 'z' && s[i] >= 'a') || (s[i] <= 'Z' && s[i] >= 'A'))
-		&& s[i] == input[ii])
-		{
-			s[i] = output[ii];
-			break;
-		}
-	}
-}
-return (s);
-}
-=======
-
 #include "main.h"
-
 /**
- * *rot13 - encodes a string using rot13.
- * @s: int type array pointer
- * Return: encoded
+ * rot13 - encrypts code
+ * @s: string to encrypt
+ * Return: char value
  */
-
 char *rot13(char *s)
 {
-int i, ii;
-char input[] =  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-char output[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	int i;
+	int j;
+	char encode1[] = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ";
+	char encode2[] = "nNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmM";
 
-for (i = 0; s[i] != '\0'; i++)
-{
-	for (ii = 0; ii < 54; ii++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (((s[i] <= 'z' && s[i] >= 'a') || (s[i] <= 'Z' && s[i] >= 'A'))
-		&& s[i] == input[ii])
+		for (j = 0; encode1[j]; j++)
 		{
-			s[i] = output[ii];
-			break;
+			if (s[i] == encode1[j])
+			{
+				s[i] = encode2[j];
+				break;
+			}
 		}
 	}
+	return (s);
 }
-return (s);
-}
->>>>>>> 259121353ad2ca83fd4c6cfb0e197ce573b10d90
